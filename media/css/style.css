@@ -21,7 +21,6 @@ body {
      * font-family: Tahoma, sans-serif;
      */
     font-family: 'DejaVu Sans Mono', 'Liberation Mono', 'Courier New';
-    overflow: hidden;
 }
 
 a {
@@ -42,15 +41,18 @@ ul {
 
 header {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 462px;
+    left: 540px;
     font-family: Anton, Tahoma, sans-serif;
     text-transform: uppercase;
     font-weight: none;
+    -webkit-transform: rotate(-1.5deg);
+    -moz-transform:rotate(-1.5deg); //firefox
+    -o-transform:rotate(-1.5deg); //Opera
 }
 
 header h1 {
-    font-size: 50px;
+    font-size: 24px;
     font-weight: normal;
     text-shadow: -1px 2px 1px black;
 }
@@ -109,8 +111,8 @@ div#social ul li a:hover img {
     }
 nav {
     position: absolute;
-    top: 80px;
-    left: 0px;
+    top: 20px;
+    left: 20px;
     width: 160px;
     text-align: left;
     font-family: Anton, Tahoma, sans-serif;
