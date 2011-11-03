@@ -1,0 +1,69 @@
+=Stratégie et outils de backup pour la maison=
+
+==Introduction==
+
+**Attention, cet article est en cours de rédaction**
+
+On lit souvent des articles sur les sauvegardes, leur importance, les outils disponibles... mais ces articles sont bien souvent adaptés au monde professionnel et pas à l'ordinateur personnel.
+
+Les différences sont multiples mais nous retiendrons :
+
+* les moyens financiers à disposition
+* le type de données à sauvegarder
+* la sensibilité de ces données
+
+Mes réflexions m'ont amenés à considérer que pour chaque type de données "personnelles", une stratégie de sauvegarde différente pouvait être mise en oeuvre. Je parle bien sûr de ma propre évaluation (peut-être erronée) de mon propre besoin.
+
+==Les différents types de données==
+
+===Multimédia===
+
+Dans cette catégorie, je classe la musique, les vidéos et les photos. Ce sont des données qui ne changent pas. Pour ma part, dans cette catégorie, seules les photos et vidéos "de famille" issus de notre appareil photo familial sont vraiment importants. La musique et les autres images ou vidéos peuvent facilement être retrouvés (rachat, compresser à nouveau un CD audio...)
+
+===Documents===
+
+Fichiers amenés à changer au cours du temps. Il peut être intéressant d'avoir la possibilité de récupérer une version antérieure d'un document. C'est dans cette catégorie que je fais aussi rentrer les programmes que je développe, les scripts...
+
+===Configuration du système===
+
+Ces fichiers changent très souvent. Il peut être intéressant de récupérer une version antérieure (par exemple quand on fait des essais de configuration de Xorg). Leur perte n'est pas "grave".
+
+==Les différents types de sauvegardes==
+
+===Sauvegarde complète===
+
+On sauvegarde à chaque fois toutes les données.
+
+* Avantage : on a toujours toutes les informations sous la main.
+* Inconvénient : demande beaucoup d'espace de stockage.
+
+===Sauvegarde différentielle===
+
+On sauvegarde "de temps en temps" toutes les données et à chaque fois on ne sauvegarde que le différentiel par rapport à ce référentiel.
+
+* Avantage : économise de l'espace de stockage mais permet quand même une récupération rapide de donnée (on a juste besoin du référentiel de départ et de la dernière sauvegarde)
+* Inconvénient : plus le temps avance et plus le "différentiel par rapport au référentiel" augmente
+
+===Sauvegarde incrémentale===
+
+On sauvegarde "de temps en temps" toutes les données et à chaque fois on ne sauvegarde que le différentiel par rapport à la sauvegarde précédente.
+
+* Avantage : grosse économie d'espace de stockage
+* Inconvénient : pour restaurer, il faut "passer" tous les incréments les uns après les autres jusqu'au dernier.
+
+===Sauvegarde incrémentale "complète"===
+
+C'est exactement le même principe que la sauvegarde incrémentale sauf que lorsqu'un fichier change, on stocke la nouvelle version dans son intégralité et pas le différentiel par rapport à la version précédente.
+
+* Avantage : pour restaurer un fichier en particulier, on n'a besoin que de la dernière sauvegarde de celui-ci
+* Inconvénient : pour restaurer un répertoire complet dont les fichiers ont changé à des moments différents, on se retrouve dans le cas de la sauvegarde incrémentale, on va devoir "passer" les différentes itérations.
+
+=Notes=
+
+[[code]]
+dar -c /mnt/230/Sauvegardes/Documents -s 3000M -P Sauvegardes_DVD --bzip2=9 -G /mnt/230/Sauvegardes/CAT_Documents -v
+mkdir CurrentISO
+for file in Documents*.dar ; do mv ${file} CurrentISO/ ; nice -n19 ionice -c3 genisoimage -o ${file/.dar/.iso} CurrentISO; mv CurrentISO/${file} . ; done
+for file in Documents.2.iso Documents.3.iso Documents.4.iso ; do dvdisaster -i ${file} -mRS02 -c ; done
+
+[[code]]

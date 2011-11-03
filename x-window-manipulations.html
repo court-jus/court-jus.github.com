@@ -1,0 +1,127 @@
+I like to fully handle my windows with the keyboard. At work I have a three-head display and needed to move windows from one monitor to another.
+
+My window manager is [[pekwm]] and it allows to define keyboard shortcuts to move windows from one desktop to another but not from one monitor to another. So I used [[xdotool]] and [[xwininfo]] to achieve this. (Note that I only use xwininfo to get the current window geometry and this will be possible in future versions of xdotool).
+
+So here is the script. Call it like that : 
+
+[[code type="bash"]]
+move_to_screen LEFT # move the current window one monitor to the left
+move_to_screen RIGHT  # move the current window one monitor to the right
+move_to_screen FIRST  # move the current window to the first monitor
+move_to_screen SECOND  # move the current window to the second monitor
+move_to_screen THIRD  # move the current window to the third monitor
+[[code]]
+
+Warning : my first monitor width is 1280px  but the second and third use a width of 1440px so you'll have to adapt the script to fit your needs :
+
+[[code type="bash"]]
+#!/bin/bash
+
+#if [ $1 -eq 1 ] ; then
+#    #wmctrl -r :ACTIVE: -e 0,0,0,-1,-1 
+#    xdotool getactivewindow windowmove 0 0 windowraise mousemove --window %1 11 10
+#elif [ $1 -eq 2 ] ; then
+#    #wmctrl -r :ACTIVE: -e 0,1440,0,-1,-1 
+#    xdotool getactivewindow windowmove 1440 0 windowraise mousemove --window %1 10 11
+#fi
+
+get_win_info()
+    {
+    xwininfo -id $(xdotool getactivewindow)
+    }
+
+get_win_left_coord()
+    {
+    get_win_info | grep "Absolute upper-left X" | cut -d: -f2 | awk '{print $1}'
+    }
+
+get_rel_win_left_coord()
+    {
+    x=$(get_win_left_coord)
+    if [ $x -gt 2720 ]; then
+        # we are on third monitor
+        echo $[ x - 2720 ]
+    elif [ $x -gt 1280 ]; then
+        # we are on second monitor
+        echo $[ x - 1280 ]
+    else
+        # we are on first monitor
+        echo $x
+    fi
+    }
+get_border_x()
+    {
+    get_win_info | grep "Relative upper-left X" | cut -d: -f2 | awk '{print $1}'
+    }
+get_border_y()
+    {
+    get_win_info | grep "Relative upper-left Y" | cut -d: -f2 | awk '{print $1}'
+    }
+get_win_top_coord()
+    {
+    get_win_info | grep "Absolute upper-left Y" | cut -d: -f2 | awk '{print $1}'
+    }
+get_monitor_number()
+    {
+    x=$(get_win_left_coord)
+    s=0
+    if [ $x -gt 1280 ]; then s=1; fi
+    if [ $x -gt 2720 ]; then s=2; fi
+    echo $s
+    }
+
+move_to_first()
+    {
+    mon=$(get_monitor_number)
+    relx=$(get_rel_win_left_coord)
+    rely=$(get_win_top_coord)
+    bx=$(get_border_x)
+    by=$(get_border_y)
+    if [ $mon -eq 0 ]; then return; fi
+    xdotool getactivewindow windowmove $[ relx - bx ] $[ rely - by ] windowraise mousemove --window %1 10 11
+    }
+move_to_second()
+    {
+    mon=$(get_monitor_number)
+    relx=$(get_rel_win_left_coord)
+    rely=$(get_win_top_coord)
+    bx=$(get_border_x)
+    by=$(get_border_y)
+    if [ $mon -eq 1 ]; then return; fi
+    xdotool getactivewindow windowmove $[ relx + 1280 - bx ] $[ rely - by ] windowraise mousemove --window %1 10 11
+    }
+move_to_third()
+    {
+    mon=$(get_monitor_number)
+    relx=$(get_rel_win_left_coord)
+    rely=$(get_win_top_coord)
+    bx=$(get_border_x)
+    by=$(get_border_y)
+    if [ $mon -eq 2 ]; then return; fi
+    xdotool getactivewindow windowmove $[ relx + 2720 - bx ] $[ rely - by ] windowraise mousemove --window %1 10 11
+    }
+move_left()
+    {
+    mon=$(get_monitor_number)
+    if [ $mon -eq 1 ]; then move_to_first; fi
+    if [ $mon -eq 2 ]; then move_to_second; fi
+    }
+move_right()
+    {
+    mon=$(get_monitor_number)
+    if [ $mon -eq 0 ]; then move_to_second; fi
+    if [ $mon -eq 1 ]; then move_to_third; fi
+    }
+
+if [ "$1" == "LEFT" ]; then
+    move_left
+elif [ "$1" == "RIGHT" ]; then
+    move_right
+elif [ "$1" == "FIRST" ]; then
+    move_right
+elif [ "$1" == "SECOND" ]; then
+    move_right
+elif [ "$1" == "THIRD" ]; then
+    move_right
+fi
+[[code]]
