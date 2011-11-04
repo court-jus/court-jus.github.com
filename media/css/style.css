@@ -201,3 +201,13 @@ nav, aside {
 #content img.inlineimage {
     height: 1.2em;
     }
+
+#debug {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 160px;
+    text-align: left;
+    font-family: Anton, Tahoma, sans-serif;
+    display: none;
+    }
