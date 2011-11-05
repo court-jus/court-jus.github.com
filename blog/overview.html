@@ -2,13 +2,29 @@
 <html lang="en">
     <head>
         <link href="http://fonts.googleapis.com/css?family=Anton" rel="stylesheet" type="text/css">
-        <title>court-jus.net</title>
+        <title>court-jus.net - Blog</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/media/css/style.css">
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
         </script>
         <![endif]-->
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26657137-1']);
+  _gaq.push(['_setDomainName', '.court-jus.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google Analytics -->
     </head>
     <body>
         <header>
@@ -17,6 +33,16 @@
             <!-- <h2>Know your tool</h2> -->
             </hgroup>
         </header>
+        <div id="debug">
+            <pre>
+            SITE :
+            <hyde.site.Site object at 0xa46604c>
+            NODE :
+            /home/celine/Monsite/cjnetsource/content/blog
+            RES :
+            /home/celine/Monsite/cjnetsource/content/blog/overview.html
+            </pre>
+        </div>
         <div id="social">
                         <ul>
         <li>
@@ -51,36 +77,38 @@
         </div>
         <nav>
                                 <ul>
-<li><a  href="/index.html">Home</a></li><li><a  href="/Gate/">Gate</a></li><li><a  href="/netblocks.html">Netblocks</a></li></ul>
+<li><a  href="/index.html">Home</a></li><li><a  href="/Gate/index.html">Gate</a></li><li><a  href="/netblocks.html">Netblocks</a></li></ul>
         </nav>
         <article id="content">
-                    <h1>News</h1>
-<h2>2011-11-01</h2>
+                    <h1>Blog</h1>
+<p>Namého</p>
+<hr />
 <ul>
-<li>The <a href="https://github.com/court-jus/Gate_OpenPortal/tags">tag v0.3</a> is out.</li>
-<li>Level Editor "a la minecraft"</li>
-<li>New <a href="http://gate.rtfd.org">documentation website</a></li>
-<li>Some little improvements</li>
-<li>4 playable levels !</li>
+<li>2012-12-12 - <a href="/blog/test2.html">Test2</a> 
+    (test2.html)</li>
+<li>2011-11-04 - <a href="/blog/2011-11-04-test1.html">2011 11 04 test1</a> 
+    (2011-11-04-test1.html)</li>
+<li><span class="tags">tags:
+        test        </span></li>
+<li>2011-08-03 - <a href="/blog/2011-08-03-test3.html">2011 08 03 test3</a> 
+    (2011-08-03-test3.html)</li>
+<li><span class="tags">tags:
+        test        </span></li>
 </ul>
-<h2>2011-10-26</h2>
+<hr />
+<p><em>Projects</em></p>
+<p><em>Gate</em></p>
 <ul>
-<li>A new video is out !</li>
-<li>We now have 3 playable levels</li>
-<li>The <a href="http://gate.readthedocs.org/en/latest/editing.html">Editor</a> is almost ready</li>
-<li>I (re)began some work to rewrite the physics part using ODE</li>
+<li><a href="/Gate/media.html">Media</a> 
+    (media.html)</li>
+<li><a href="/Gate/news/index.html">Index</a> 
+    (index.html)</li>
 </ul>
-<h2>2011-10-22</h2>
-<p>Many changes. Look at the <a href="https://github.com/court-jus/Gate_OpenPortal/commits/master">Changelog</a></p>
-<h2>2011-10-21</h2>
-<p>The <a href="https://github.com/court-jus/Gate_OpenPortal/tags">tag v0.2</a> is out. I've removed the ODE part now because I wanted to go back in the game mechanism. In this version, there is a Level loader that translates a text file in a level. Please use it to create custom levels and have fun !</p>
-<h2>2011-10-13</h2>
-<p>The project is not dead. I'm integrating the ODE physics engine and it's a little hard. I'll release a new video when possible. I'm also adding an easy way to create new levels.</p>
-<h2>2011-08-03</h2>
-<p>Tonight I'm trying to work on the view angle inside the portals.</p>        </article>
+<p><em>NetBlocks</em></p>        </article>
         <aside>
             <p>Created by <a href="http://court-jus.net">Ghislain Lévêque</a>
-             - powered by <a href="http://ringce.com/hyde">Hyde</a></p>
+             - powered by <a href="http://ringce.com/hyde">Hyde</a>
+             - 1.0alpha</p>
         </aside>
     </body>
 </html>
