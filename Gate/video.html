@@ -2,13 +2,29 @@
 <html lang="en">
     <head>
         <link href="http://fonts.googleapis.com/css?family=Anton" rel="stylesheet" type="text/css">
-        <title>court-jus.net</title>
+        <title>court-jus.net - Gate</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/media/css/style.css">
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
         </script>
         <![endif]-->
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26657137-1']);
+  _gaq.push(['_setDomainName', '.court-jus.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End Google Analytics -->
     </head>
     <body>
         <header>
@@ -17,6 +33,16 @@
             <!-- <h2>Know your tool</h2> -->
             </hgroup>
         </header>
+        <div id="debug">
+            <pre>
+            SITE :
+            <hyde.site.Site object at 0x89c904c>
+            NODE :
+            /home/celine/Monsite/cjnetsource/content/Gate
+            RES :
+            /home/celine/Monsite/cjnetsource/content/Gate/video.html
+            </pre>
+        </div>
         <div id="social">
                         <ul>
         <li>
@@ -51,13 +77,14 @@
         </div>
         <nav>
                                 <ul>
-<li><a  href="/index.html">Home</a></li><li><a  href="/Gate/">Gate</a></li><li><a  href="/netblocks.html">Netblocks</a></li></ul>
+<li><a  href="/index.html">Home</a></li><li><a  href="/Gate/index.html">Gate</a></li><li><a  href="/netblocks.html">Netblocks</a></li></ul>
         </nav>
         <article id="content">
                     <iframe width="530" height="330" src="http://www.youtube.com/embed/tpKT00oqHE4" frameborder="0" allowfullscreen></iframe>        </article>
         <aside>
             <p>Created by <a href="http://court-jus.net">Ghislain Lévêque</a>
-             - powered by <a href="http://ringce.com/hyde">Hyde</a></p>
+             - powered by <a href="http://ringce.com/hyde">Hyde</a>
+             - 1.0.0</p>
         </aside>
     </body>
 </html>
