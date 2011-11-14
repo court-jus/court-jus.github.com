@@ -109,6 +109,11 @@ div#social ul li a:hover img {
     margin-top: -20px;
     margin-right: -20px;
     }
+a.extra_social {
+    position: absolute;
+    top: -5px;
+    right: -40px;
+    }
 nav {
     position: absolute;
     top: 20px;
