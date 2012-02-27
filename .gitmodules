@@ -1,3 +1,3 @@
 [submodule "TMatch"]
 	path = TMatch
-	url = /home/gl/public_html/TMatch
+	url = git@github.com:court-jus/TMatch.git
