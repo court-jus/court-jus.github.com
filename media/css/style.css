@@ -82,32 +82,38 @@ header h2 {
 }
 
 div#social {
-    position: absolute;
-    top: 75px;
-    right: 290px;
+    margin-top: 22px;
+    width: 100%;
+    text-align: center;
     vertical-align: bottom;
     -webkit-transform: rotate(0.5deg);
     -moz-transform:rotate(0.5deg); //firefox
     -o-transform:rotate(0.5deg); //Opera
     }
 div#social ul {
-    vertical-align: bottom;
+    vertical-align: top;
     }
 div#social ul li {
-    vertical-align: bottom;
+    vertical-align: top;
     display: inline-block;
     list-style: none;
     margin: 0em 1em;
-    background-color: #323232;
     }
-div#social ul li img {
+div#social ul a {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    }
+div#social ul li a img {
     vertical-align: bottom;
-    height: 20px;
+    height: 42px;
     }
 div#social ul li a:hover img {
-    height: 40px;
+    height: 60px;
+    /*
     margin-top: -20px;
     margin-right: -20px;
+    */
     }
 a.extra_social {
     position: absolute;
