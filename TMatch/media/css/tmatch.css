@@ -1,0 +1,276 @@
+/*
+ * The CSS for game elements
+ */
+#container
+    {
+    width: 727px;
+    position: relative;
+    margin: auto;
+    height: 550px;
+    }
+.message
+    {
+    }
+#score
+    {
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    border: 1px solid black;
+    width: 95px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    text-align: right;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    }
+#current
+    {
+    position: absolute;
+    bottom: 191px;
+    left: 10px;
+    height: 171px;
+    width: 101px;
+    border: 1px solid black;
+    text-align: center;
+    }
+#stash
+    {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    height: 171px;
+    width: 101px;
+    border: 1px solid black;
+    text-align: center;
+    }
+#upswitch, #dnswitch
+    {
+    width: 71px;
+    border: 1px solid black;
+    height: 18px;
+    text-align: center;
+    position: absolute;
+    left: 40px;
+    }
+#upswitch
+    {
+    bottom: 390px;
+    background-image: url("../img/Sky Block.png");
+    background-position: -5 80;
+    }
+#dnswitch
+    {
+    bottom: 372px;
+    background-image: url("../img/Underground Block.png");
+    background-position: 0 25;
+    color: #ccf;
+    }
+#currentLayerDisplayContainer
+    {
+    position: absolute;
+    bottom: 372px;
+    left: 10px;
+    width: 25px;
+    height: 36px;
+    border: 1px solid black;
+    display: table;
+    }
+#currentLayerDisplay
+    {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    font-size: 1.4em;
+    }
+#personscontainer
+    {
+    /*
+    width: 100%;
+    */
+    }
+#personscontainer div
+    {
+    height: 53px;
+    width: 40px;
+    position: absolute;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    }
+#personscontainer div.mapcell
+    {
+    height: 40px;
+    background-size: 100% 100%;
+    bottom: 30px;
+    left: 25px;
+    }
+.person1
+    {
+    background-image: url("../img/person1.png");
+    }
+.queen
+    {
+    background-image: url("../img/queen.png");
+    }
+#playzone
+    {
+    /*
+    width: 100%;
+    */
+    }
+#playzone div.mapcell
+    {
+    height: 171px;
+    width: 101px;
+    position: absolute;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    }
+.matcher
+    {
+    background-image: url('../img/Star.png');
+    }
+#personscontainer div.mapcell.matcher
+    {
+    background-image: url('../img/Star Bubble.png');
+    }
+.eraser
+    {
+    background-image: url('../img/Key.png');
+    }
+#personscontainer div.mapcell.eraser
+    {
+    background-image: url('../img/Key Bubble.png');
+    }
+.odiamond
+    {
+    background-image: url('../img/Orange Diamond.png');
+    }
+.bdiamond
+    {
+    background-image: url('../img/Blue Diamond.png');
+    }
+.gdiamond
+    {
+    background-image: url('../img/Green Diamond.png');
+    }
+.door
+    {
+    background-image: url('../img/Door Tall Closed.png');
+    background-position: 0px -20px !important;
+    }
+#personscontainer div.mapcell.door
+    {
+    background-image: url('../img/Door Tall Bubble.png');
+    }
+.bug
+    {
+    background-image: url('../img/Water Bug2.png');
+    }
+#personscontainer div.mapcell.bug
+    {
+    background-image: url('../img/Enemy Bug Bubble.png');
+    }
+.empty
+    {
+    background-image: url('../img/Water Block.png');
+    }
+.type_1
+    {
+    background-image: url('../img/Brown Block.png');
+    }
+.type_2
+    {
+    background-image: url('../img/Dirt Block.png');
+    }
+.type_3
+    {
+    background-image: url('../img/Grass Block.png');
+    }
+.type_4
+    {
+    background-image: url('../img/Plain Block.png');
+    }
+.type_5
+    {
+    background-image: url('../img/Stone Block.png');
+    }
+.type_6
+    {
+    background-image: url('../img/Wood Block.png');
+    }
+.type_7
+    {
+    background-image: url('../img/Wall Block.png');
+    }
+.type_8
+    {
+    background-image: url('../img/type_8.png');
+    }
+#personscontainer div.mapcell.type_1
+    {
+    background-image: url('../img/Brown Bubble.png');
+    }
+#personscontainer div.mapcell.type_2
+    {
+    background-image: url('../img/Dirt Bubble.png');
+    }
+#personscontainer div.mapcell.type_3
+    {
+    background-image: url('../img/Grass Bubble.png');
+    }
+#personscontainer div.mapcell.type_4
+    {
+    background-image: url('../img/Plain Bubble.png');
+    }
+#personscontainer div.mapcell.type_5
+    {
+    background-image: url('../img/Stone Bubble.png');
+    }
+#personscontainer div.mapcell.type_6
+    {
+    background-image: url('../img/Wood Bubble.png');
+    }
+#personscontainer div.mapcell.type_7
+    {
+    background-image: url('../img/Wall Bubble.png');
+    }
+#personscontainer div.mapcell.type_8
+    {
+    background-image: url('../img/type_8.png');
+    }
+#playzone_sky div.empty
+    {
+    background-image: url('../img/Sky Block.png');
+    }
+#playzone_underground div.empty
+    {
+    background-image: url('../img/Underground Block.png');
+    }
+#playzone_sky .bug
+    {
+    background-image: url('../img/Sky Bug.png');
+    }
+#playzone_underground .bug
+    {
+    background-image: url('../img/Underground Bug.png');
+    }
+
+#loadbtn, #savebtn
+    {
+    position: absolute;
+    left: 10px;
+    width: 101px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    }
+#loadbtn
+    {
+    bottom: 420px;
+    }
+#savebtn
+    {
+    bottom: 440px;
+    }

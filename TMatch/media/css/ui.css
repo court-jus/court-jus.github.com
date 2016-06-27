@@ -1,0 +1,15 @@
+/*
+ * The CSS for the UI (page around the game)
+ */
+body
+    {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana;
+    }
+#googlead
+    {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    }

@@ -1,0 +1,499 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Tmatch</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/claro/claro.css" />
+    <script src="media/js/doc.js" type="text/javascript" charset="utf-8"></script>
+    <script src="media/js/utils.js" type="text/javascript" charset="utf-8"></script>
+    <script src="media/js/saveload.js" type="text/javascript" charset="utf-8"></script>
+    <script src="media/js/tmatch.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="media/css/ui.css" />
+    <link rel="stylesheet" href="media/css/tmatch.css" />
+    <link rel="stylesheet" href="media/css/doc.css" />
+    <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-7265349873444859";
+        /* TMatch */
+        google_ad_slot = "0583821500";
+        google_ad_width = 160;
+        google_ad_height = 600;
+        //-->
+    </script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28322129-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+<body class="claro">
+    <div id="googlead">
+        <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+    <div id="documentation">
+        <!-- Main menu -->
+        <div id="doc0en" style="display:none;" class="doc">
+            <h1>Triple Match - version "<a href="#" onclick="showdoc('newen');">Gamma Grumpf</a>"</h1>
+            <p>Welcome !</p>
+            <p><a href="#" onclick="showdoc('newen');">What's new ?</a></p>
+            <div class="frdoc"><a href="#" onclick="showdoc('doc0fr');">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(1);">Read the documentation</a></div>
+        </div>
+        <div id="doc0fr" style="display:none;" class="doc">
+            <h1>Triple Match - version "<a href="#" onclick="showdoc('newfr');">Gamma Grumpf</a>"</h1>
+            <p>Bienvenue !</p>
+            <p><a href="#" onclick="showdoc('newfr');">Quoi de neuf ?</a></p>
+            <div class="frdoc"><a href="#" onclick="showdoc('doc0en');">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(11);">Lire la documentation</a></div>
+        </div>
+
+        <!-- News -->
+        <div id="newen" style="display:none;" class="doc">
+            <h1>What's new ?</h1>
+            <h2>From version "Beta Burp" to version "Gamma Grumpf"</h2>
+            <ul>
+            <li><a href="#" onclick="showdoc(5);">Characters</a> now hold a tooltip showing their currently stashed item.</li>
+            <li><a href="#" onclick="showdoc(6);">New scoring system</a></li>
+            <li>Bug fix, the bug allowed to combiner farther than intended. It was possible to combine 2 orange diamonds or 2 wall blocks into an empty cell.</li>
+            </ul>
+            <div class="prevdoc"><a href="#" onclick="showdoc('doc0en');">Main menu</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc('newfr');">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc('newen1');">Older news</a></div>
+        </div>
+        <div id="newfr" style="display:none;" class="doc">
+            <h1>Quoi de neuf ?</h1>
+            <h2>Entre la version "Beta Burp" et la version "Gamma Grumpf"</h2>
+            <ul>
+            <li><a href="#" onclick="showdoc(15)";>Les personnages</a> affichent maintenant une info-bulle contenant l'élément stocké.</li>
+            <li><a href="#" onclick="showdoc(16)";>Nouvelle grille de scores</a></li>
+            <li>Correction d'un bug qui permettait de combiner au delà de ce qui était prévu (combiner 2 diamants oranges ou 2 blocs murs) ce qui donnait une cellule vide.</li>
+            </ul>
+            <div class="prevdoc"><a href="#" onclick="showdoc('doc0fr');">Menu principal</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc('newen');">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc('newfr1');">Anciennes nouvelles</a></div>
+        </div>
+        <div id="newen1" style="display:none;" class="doc">
+            <h1>What's new ?</h1>
+            <h2>From version "Alpha Aargh" to version "Beta Burp"</h2>
+            <ul>
+            <li>New feature : <a href="#" onclick="showdoc(5);">characters</a></li>
+            <li>More doc</li>
+            <li>Code reorganisation</li>
+            <li>Better localization</li>
+            </ul>
+            <div class="prevdoc"><a href="#" onclick="showdoc('doc0en');">Main menu</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc('newfr1');">Français</a></div>
+        </div>
+        <div id="newfr1" style="display:none;" class="doc">
+            <h1>Quoi de neuf ?</h1>
+            <h2>Entre la version "Alpha Aargh" et la version "Beta Burp"</h2>
+            <ul>
+            <li>Nouvelle fonctionnalité : <a href="#" onclick="showdoc(15)";>les personnages</a></li>
+            <li>Documentation étoffée</li>
+            <li>Réorganisation du code</li>
+            <li>Meilleure gestion des langues</li>
+            </ul>
+            <div class="prevdoc"><a href="#" onclick="showdoc('doc0fr');">Menu principal</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc('newen1');">English</a></div>
+        </div>
+
+        <!-- English doc -->
+        <div id="doc1" style="display:none;" class="doc">
+            <h1>Triple Match</h1>
+            <p>This game is inspired by <a target="_blank" href="http://www.tripletown.com/">Triple Town</a> from <a target="_blank" href="http://www.spryfox.com/">Spryfox</a>, so you won't be lost if you played this one before.</p>
+            <p>There is no way to win, just try to make the higher possible score.</p>
+            <p>There is two losing conditions :
+            <ul>
+            <li>Drown the last character</li>
+            <li>Fill the game with "non-water" cells. You lose when there is no water left</li>
+            </ul>
+            </p>
+            <p>On each turn, you have to place an item in an empty cell. When you place 3 identical items next to each other, they combine into 1 new item. Thanks to this mechanism, you can prevent the board game from filling.</p>
+            <p>Each turn you will be presented a new item to place in the "Current" box on the left. Click on the cell where you want to place this item.</p>
+            <p>The "Stash" under the "Current" box allows you to store an item for later use. Click on the stash to move the current item into the stash (and recover the stashed item).</p>
+            <p>There is one stash for every character in the game. Just click on a character to see his own "personnal" stash. To help you, every character holds a bubble with the stashed item displayed in it.</p>
+            <div class="prevdoc"><a href="#" onclick="showdoc('doc0en');">Main menu</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(11);">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(2);">Next &rarr;</a></div>
+        </div>
+        <div id="doc2" style="display:none;" class="doc">
+            <h1>Combination</h1>
+            <p>You can combine 3 or more blocks into a "bigger" one. The order is :</p>
+            <div class="centercontainer">
+                <img src="media/img/BlocksExplanation.png" />
+            </div>
+            <div class="prevdoc"><a href="#" onclick="showdoc(1);">&larr; Prev</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(12);">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(3);">Next &rarr;</a></div>
+        </div>
+        <div id="doc3" style="display: none;" class="doc">
+            <h1>Annoying Bugs</h1>
+            <p>Sometimes, you have to place "Bugs". Bugs move freely on the board an prevent you from placing items. To kill bugs, just confine them in an area without any free cell. They will then change into green diamond. The diamonds follow the same scheme as blocks :</p>
+            <div class="centercontainer">
+                <img src="media/img/BugsExplanation.png" />
+            </div>
+            <div class="prevdoc"><a href="#" onclick="showdoc(2);">&larr; Prev</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(13);">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(4);">Next &rarr;</a></div>
+        </div>
+        <div id="doc4" style="display: none;" class="doc">
+            <h1>Specials</h1>
+            <p class="matcher" style="vertical-align: middle; padding-left: 100px;background-position: 0 -55; height: 90; background-repeat: no-repeat;">The "star" is a joker. It matches any other block or diamond. If two or more matches are possible, the "smaller" match will be done.</p>
+            <p class="eraser" style="vertical-align: middle; padding-left: 100px;background-position: 0 -55; height: 90; background-repeat: no-repeat;">The "key" is an eraser. It removes anything.</p>
+            <p class="bug" style="vertical-align: middle; padding-left: 100px;background-position: 0 -55; height: 120; background-repeat: no-repeat;">This one is just here to block you. All you can do is remove it with the key.</p>
+            <div class="prevdoc"><a href="#" onclick="showdoc(3);">&larr; Prev</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(14);">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(5);">Next &rarr;</a></div>
+        </div>
+        <div id="doc5" style="display: none;" class="doc">
+            <h1>Little characters</h1>
+            <p>At the beginning, there is only the queen. A new little guy will appear each time you make a match of level 5 or more (wood plank)</p>
+            <p>They move on every "non water" cell. They can move on diagonals.</p>
+            <p>For every character in the game, there is a stash. The more character you have, the more items you can store for later use.</p>
+            <p>Characters drown if they find themselves on a water cell without any possibility do go back "on earth". So be careful when you make a match with a character on it or when you destroy an item with the key.</p>
+            <div class="prevdoc"><a href="#" onclick="showdoc(4);">&larr; Prev</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(15);">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(6);">Next &rarr;</a></div>
+        </div>
+        <div id="doc6" style="display: none;" class="doc">
+            <h1>Score grid</h1>
+            <table class="gridscore">
+                <colgroup>
+                    <col width="20%" />
+                    <col width="20%" />
+                    <col width="20%" />
+                    <col width="20%" />
+                    <col width="20%" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>When item<br />... is ...</th>
+                    <th>played</th>
+                    <th>combined</th>
+                    <th>result of<br />combination</th>
+                    <th>destroyed</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th class="mapcell type_1">1</th>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>&nbsp;</td>
+                    <td>-5</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_2">2</th>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>-30</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_3">3</th>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>70</td>
+                    <td>-75</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_4">4</th>
+                    <td>200</td>
+                    <td>100</td>
+                    <td>150</td>
+                    <td>-200</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_5">5</th>
+                    <td>&nbsp;</td>
+                    <td>150</td>
+                    <td>500</td>
+                    <td>-1000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_6">6</th>
+                    <td>&nbsp;</td>
+                    <td>1000</td>
+                    <td>2500</td>
+                    <td>-5000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_7">7</th>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>10000</td>
+                    <td>-20000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell door">-1</th>
+                    <td>500</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell bug">-2</th>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>&nbsp;</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th class="mapcell eraser">-3</th>
+                    <td>100</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="mapcell matcher">-4</th>
+                    <td>250</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="mapcell gdiamond">-5</th>
+                    <td>&nbsp;</td>
+                    <td>500</td>
+                    <td>750</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <th class="mapcell bdiamond">-6</th>
+                    <td>&nbsp;</td>
+                    <td>2500</td>
+                    <td>1500</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell odiamond">-7</th>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>1500</td>
+                    <td>25000</td>
+                </tr>
+                </tbody>
+            </table>
+            </table>
+            <div class="prevdoc"><a href="#" onclick="showdoc(5);">&larr; Prev</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(16);">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(9);">Next &rarr;</a></div>
+        </div>
+        <div id="doc9" style="display: none;" class="doc credits">
+            <h1>Credits</h1>
+            <ul>
+                <li>Code : <a target="_blank" href="http://about.me/courtjus/">Ghislain "court-jus" Lévêque</a></li>
+                <li>Inspiration : <a target="_blank" href="http://www.tripletown.com/">Triple Town</a> from <a target="_blank" href="http://www.spryfox.com/">Spryfox</a> (I guess it was inspired by older stuff, so I thank them too)</li>
+                <li>Graphics : <a target="_blank" href="http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html">PlanetCute</a> from <a target="_blank" href="http://www.lostgarden.com/">Lost Garden</a></li>
+            </ul>
+            <div class="prevdoc"><a href="#" onclick="showdoc(6);">&larr; Prev</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(19);">Français</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc('doc0en');">Main menu</a></div>
+        </div>
+
+        <!-- French -->
+        <div id="doc11" class="doc" style="display:none;">
+            <h1>Triple Match</h1>
+            <p>Le jeu est inspiré de <a target="_blank" href="http://www.tripletown.com/">Triple Town</a> du studio <a target="_blank" href="http://www.spryfox.com/">Spryfox</a>, vous ne serez donc pas perdu si vous y avez déjà joué.</p>
+            <p>On ne peut pas gagner, on peut juste essayer de faire le meilleur score possible.</p>
+            <p>Il y a deux façon de perdre :
+            <ul>
+            <li>Noyer tous les personnages</li>
+            <li>Remplir la zone de jeu jusqu'à ce qu'il n'y ait plus d'eau du tout</li>
+            </ul>
+            </p>
+            <p>A chaque tour, vous devez placer un élément sur une cellule vide. Lorsque vous posez 3 éléments indentiques côte à côte, ils se combinent en 1 nouvel élément. C'est grâce à ce mécanisme que vous pouvez empêcher la zone de jeu de se remplir.</p>
+            <p>A chaque tour, le jeu vous présente un nouvel élément dans la zone "En cours" à gauche. Cliquez dans l'espace de jeu sur la cellule où vous voulez placer cet élément.</p>
+            <p>La zone "Réserve" sous la zone "En cours" vous permet de conserver un élément que vous ne voulez pas utiliser immédiatement. Cliquez sur la "Réserve" pour y stocker l'élément courant (et récupérer l'élément stocké).</p>
+            <p>Vous disposez d'autant de réserves différentes qu'il y a de personnages sur le jeu. Cliquez simplement sur un personnage pour afficher sa réserve "personnelle". Pour vous aider, chaque personnage affiche dans une bulle l'élément qu'il "réserve" actuellement.</p>
+            <div class="prevdoc"><a href="#" onclick="showdoc('doc0fr');">Menu principal</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(1);">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(12);">Suivant &rarr;</a></div>
+        </div>
+        <div id="doc12" style="display:none;" class="doc">
+            <h1>Combinaisons</h1>
+            <p>Lorsque vous placez un troisième bloc à côté de
+            <p>Vous pouvez combiner 3 blocs ou plus en un bloc plus "important". Voici l'ordre de combinaison :</p>
+            <div class="centercontainer">
+                <img src="media/img/BlocksExplanation.png" />
+            </div>
+            <div class="prevdoc"><a href="#" onclick="showdoc(11);">&larr; Précédent</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(2);">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(13);">Suivant &rarr;</a></div>
+        </div>
+        <div id="doc13" style="display: none;" class="doc">
+            <h1>Insectes</h1>
+            <p>Parfois, vous devez placer des "Insectes". Ils se déplacent librement sur le plateau et vous empêchent de positionner d'autres éléments. Pour les tuer, il suffit de les enfermer dans une zone ne contenant plus aucune cellule libre. Ils se changent alors en diamant vert. Les diamants peuvent se combiner comme les blocs :</p>
+            <div class="centercontainer">
+                <img src="media/img/BugsExplanation.png" />
+            </div>
+            <div class="prevdoc"><a href="#" onclick="showdoc(12);">&larr; Précédent</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(3);">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(14);">Suivant &rarr;</a></div>
+        </div>
+        <div id="doc14" style="display: none;" class="doc">
+            <h1>Éléments spéciaux</h1>
+            <p class="matcher" style="vertical-align: middle; padding-left: 100px;background-position: 0 -55; height: 90; background-repeat: no-repeat;">"L'étoile" est un joker. Elle peut se combiner avec n'importe quel bloc ou n'importe quel diamant. Si deux combinaisons (ou plus) sont possibles, la "plus petite" sera choisie.</p>
+            <p class="eraser" style="vertical-align: middle; padding-left: 100px;background-position: 0 -55; height: 90; background-repeat: no-repeat;">La "clé" est une gomme. Elle peut enlever n'importe quel élément.</p>
+            <p class="bug" style="vertical-align: middle; padding-left: 100px;background-position: 0 -55; height: 120; background-repeat: no-repeat;">Ce bloc est juste là pour vous bloquer. Tout ce que vous pouvez faire, c'est l'enlever grâce à la clé.</p>
+            <div class="prevdoc"><a href="#" onclick="showdoc(13);">&larr; Précédent</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(4);">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(15);">Suivant &rarr;</a></div>
+        </div>
+        <div id="doc15" style="display: none;" class="doc">
+            <h1>Personnsages</h1>
+            <p>Au départ il n'y a que la reine. Un nouveau personnage apparaît à chaque fois que vous réalisez une combinaison de niveau 5 ou plus (planche de bois)</p>
+            <p>Les personnages se déplacent sur les cellules "hors d'eau". Contrairement aux insectes, ils peuvent se déplacer en diagonale.</p>
+            <p>Pour chaque personnage sur la zone de jeu, il y a une réserve. Donc plus vous avez de personnages, plus vous pouvez stocker d'éléments pour un usage futur.</p>
+            <p>Les personnages se noient si ils se retrouvent sur une cellule d'eau avec aucune possibilité de fuite (attention lorsque vous combinez 3 éléments et qu'un personnage est sur l'un de ces éléments ou lorsque vous supprimez un élément avec la clé)</p>
+            <div class="prevdoc"><a href="#" onclick="showdoc(14);">&larr; Précédent</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(5);">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(16);">Suivant &rarr;</a></div>
+        </div>
+        <div id="doc16" style="display: none;" class="doc">
+            <h1>Grille de score</h1>
+            <table class="gridscore">
+                <colgroup>
+                    <col width="20%" />
+                    <col width="20%" />
+                    <col width="20%" />
+                    <col width="20%" />
+                    <col width="20%" />
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>Quand l'élément<br />... est ...</th>
+                    <th>Placé</th>
+                    <th>Combiné</th>
+                    <th>Résultat de<br />combinaison</th>
+                    <th>Détruit</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th class="mapcell type_1">1</th>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>&nbsp;</td>
+                    <td>-5</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_2">2</th>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>-30</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_3">3</th>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>70</td>
+                    <td>-75</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_4">4</th>
+                    <td>200</td>
+                    <td>100</td>
+                    <td>150</td>
+                    <td>-200</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_5">5</th>
+                    <td>&nbsp;</td>
+                    <td>150</td>
+                    <td>500</td>
+                    <td>-1000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_6">6</th>
+                    <td>&nbsp;</td>
+                    <td>1000</td>
+                    <td>2500</td>
+                    <td>-5000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell type_7">7</th>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>10000</td>
+                    <td>-20000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell door">-1</th>
+                    <td>500</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell bug">-2</th>
+                    <td>10</td>
+                    <td>100</td>
+                    <td>&nbsp;</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th class="mapcell eraser">-3</th>
+                    <td>100</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="mapcell matcher">-4</th>
+                    <td>250</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="mapcell gdiamond">-5</th>
+                    <td>&nbsp;</td>
+                    <td>500</td>
+                    <td>750</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <th class="mapcell bdiamond">-6</th>
+                    <td>&nbsp;</td>
+                    <td>2500</td>
+                    <td>1500</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <th class="mapcell odiamond">-7</th>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>1500</td>
+                    <td>25000</td>
+                </tr>
+                </tbody>
+            </table>
+            </table>
+            <div class="prevdoc"><a href="#" onclick="showdoc(15);">&larr; Prev</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(6);">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc(19);">Next &rarr;</a></div>
+        </div>
+        <div id="doc19" style="display: none;" class="doc credits">
+            <h1>Crédits</h1>
+            <ul>
+                <li>Code : <a target="_blank" href="http://about.me/courtjus/">Ghislain "court-jus" Lévêque</a></li>
+                <li>Inspiration : <a target="_blank" href="http://www.tripletown.com/">Triple Town</a> de <a target="_blank" href="http://www.spryfox.com/">Spryfox</a> (Je suppose qu'ils ont eux-mêmes été inspirés par d'autres que je remercie aussi)</li>
+                <li>Graphismes : <a target="_blank" href="http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html">PlanetCute</a> de <a target="_blank" href="http://www.lostgarden.com/">Lost Garden</a></li>
+            </ul>
+            <div class="prevdoc"><a href="#" onclick="showdoc(16);">&larr; Précédent</a></div>
+            <div class="frdoc"><a href="#" onclick="showdoc(9);">English</a></div>
+            <div class="nextdoc"><a href="#" onclick="showdoc('doc0fr');">Menu principal</a></div>
+        </div>
+    </div>
+</body>
+</html>
