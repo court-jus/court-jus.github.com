@@ -9052,6 +9052,9 @@ form.form label {
     padding: 0px;
     margin: 0px;
   }
+  .flex {
+    display: block;
+  }
 }
 /**
  * Include other bower_components's less files
