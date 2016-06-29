@@ -9019,10 +9019,10 @@ div {
 }
 .page .cards .card {
   position: relative;
+  overflow: hidden;
 }
 .page .cards .card img.back {
   position: absolute;
-  z-index: -1;
 }
 .page .cards .card p {
   width: 100%;
@@ -9032,6 +9032,9 @@ div {
 .page .cards .card.card.with-boundaries {
   border: 1px solid red;
   background-color: pink;
+}
+.page .cards .card.card.with-boundaries img.back {
+  opacity: 0.5;
 }
 form.form label {
   width: 100%;
