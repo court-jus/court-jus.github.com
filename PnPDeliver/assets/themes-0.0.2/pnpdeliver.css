@@ -8995,7 +8995,7 @@ div {
   page-break-after: always;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   flex-shrink: 0;
 }
 .page.page.with-boundaries {
@@ -9011,17 +9011,13 @@ div {
   height: 11in;
 }
 .page .cards {
-  width: 7.5in;
-  height: 10.5in;
   margin: auto;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: space-between;
+  justify-content: space-around;
+  align-content: space-around;
 }
 .page .cards .card {
-  width: 2.5in;
-  height: 3.5in;
   position: relative;
 }
 .page .cards .card img.back {
