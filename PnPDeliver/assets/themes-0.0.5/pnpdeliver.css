@@ -6849,6 +6849,15 @@ div {
 .page .cards .card.card.with-boundaries img.back {
   opacity: 0.5;
 }
+.page .cards .card.rotate-cw img.back {
+  transform: rotate(90deg);
+}
+.page .cards .card.rotate-ccw img.back {
+  transform: rotate(-90deg);
+}
+.page.page-back .cards {
+  flex-direction: row-reverse;
+}
 form.form label {
   width: 100%;
 }
