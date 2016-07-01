@@ -6810,6 +6810,14 @@ div {
   justify-content: center;
   align-content: center;
   flex-shrink: 0;
+  position: relative;
+}
+.page .cropmark {
+  background-color: black;
+  width: 0.02in;
+  height: 0.02in;
+  position: absolute;
+  z-index: 2;
 }
 .page.page.with-boundaries {
   border: 1px solid black;
@@ -6871,6 +6879,12 @@ form.form label {
   }
   .flex {
     display: block;
+  }
+  .cropmark {
+    background-color: black !important;
+  }
+  img {
+    max-width: inherit !important;
   }
 }
 /**
