@@ -6831,6 +6831,9 @@ div {
   width: 8.5in;
   height: 11in;
 }
+.page .background-for-cards {
+  position: absolute;
+}
 .page .cards {
   margin: auto;
   display: flex;
