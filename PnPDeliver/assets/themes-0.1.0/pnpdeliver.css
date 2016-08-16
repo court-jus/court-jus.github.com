@@ -6803,6 +6803,17 @@ div {
 .flex {
   display: flex;
 }
+.pages {
+  background-color: #eef;
+}
+.pages.page-a4 {
+  min-width: 210mm;
+  min-height: 297mm;
+}
+.pages.page-letter {
+  min-width: 8.5in;
+  min-height: 11in;
+}
 .page {
   display: flex;
   page-break-after: always;
@@ -6889,6 +6900,12 @@ form.form label {
   img {
     max-width: inherit !important;
   }
+}
+.description {
+  border: 1px solid black;
+  margin: 5mm;
+  padding: 5mm;
+  background-color: white;
 }
 /**
  * Include other bower_components's less files
